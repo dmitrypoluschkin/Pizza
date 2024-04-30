@@ -1,0 +1,55 @@
+.logo {
+    margin-bottom: 10px;
+}
+
+.home{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/home.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repead: no-repead;
+    z-index: -1;
+}
+
+.pizzas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/pizza.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repead: no-repead;
+    z-index: -1;
+}
+
+.rolls{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/rolls.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repead: no-repead;
+    z-index: -1;
+}
+
+.drinks{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/drinks.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repead: no-repead;
+    z-index: -1;
+}
