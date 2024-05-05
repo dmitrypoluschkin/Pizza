@@ -3,5 +3,38 @@
 {% block title %} Drinks {% endblock %}
 
 {% block content %}
-    <div class="drinks"></div>
+    <div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-md-8">
+            <h2 class="title">Our Drinks</h2>
+            <div class="row">
+                {% for drink in drinks %}
+                <div class="col-md-6 p-4">
+                    <img class="picture" src="{{ drink.dImage }}">
+                    <h4 class="pt-3">{{ drink.name }}</h4>
+                    <div class="form-check-inline">
+                        <label class="form-check-inline">
+                            <input class="form-check-inline" type="radio" checked>
+                            {{ drink.priceM }} $
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-inline">
+                            <input class="form-check-inline" type="radio" checked>
+                            {{ drink.priceL }} $
+                        </label>
+                    </div>
+                    <div>
+                        <button class="btn-info pt-3">Add to cart</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+</div>
 {% endblock %}

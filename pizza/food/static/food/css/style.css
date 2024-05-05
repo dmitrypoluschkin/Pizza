@@ -53,3 +53,21 @@
     background-repead: no-repead;
     z-index: -1;
 }
+
+.title{
+    margin: 50px;
+    text-align: center;
+}
+
+.picture{
+    width: 50%;
+    border-radius: 50%;
+    height: 50%;
+}
+
+.orders{
+    position: relative;
+    top: 100px;
+
+}
+

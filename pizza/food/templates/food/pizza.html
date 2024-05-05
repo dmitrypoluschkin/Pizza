@@ -4,5 +4,43 @@
 
 
 {% block content %}
-    <div class="pizzas"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 text-center">
+            <h2 class="title">Our Pizzas</h2>
+            <div class="row">
+                {% for pizza in pizzas %}
+                <div class="col-md-6 p-4">
+                    <img class="picture" src="{{ pizza.pImage }}">
+                    <h4 class="pt-3" id="piz{{ pizza.id }}">{{ pizza.name }}</h4>
+                    <div class="form-check-inline">
+                        <label class="form-check-inline">
+                            <input class="form-check-inline" type="radio" name="pizza{{ pizza.id }}" value="{{ pizza.priceM }}" checked>
+                            {{ pizza.priceM }} $
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-inline">
+                            <input class="form-check-inline" name="pizza{{ pizza.id }}" type="radio" value="{{ pizza.priceL }}">
+                            {{ pizza.priceL }} $
+                        </label>
+                    </div>
+                    <div>
+                        <button class="btn-info pt-3">Add to cart</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+        <div class="col-md-4 orders">
+            <h2 class="text-center">Order list</h2>
+            <ul>
+
+            </ul>
+            <h4 class="text-right">Total: 0$</h4class>
+        </div>
+    </div>
+</div>
 {% endblock %}

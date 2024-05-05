@@ -3,5 +3,38 @@
 {% block title %} Rolls {% endblock %}
 
 {% block content %}
-    <div class="rolls"></div>
+    <div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-md-8">
+            <h2 class="title">Our Rolls</h2>
+            <div class="row">
+                {% for roll in rolls %}
+                <div class="col-md-6 p-4">
+                    <img class="picture" src="{{ roll.rImage }}">
+                    <h4 class="pt-3">{{ roll.name }}</h4>
+                    <div class="form-check-inline">
+                        <label class="form-check-inline">
+                            <input class="form-check-inline" type="radio" checked>
+                            {{ roll.price5 }} $
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-inline">
+                            <input class="form-check-inline" type="radio" checked>
+                            {{ roll.price10 }} $
+                        </label>
+                    </div>
+                    <div>
+                        <button class="btn-info pt-3">Add to cart</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+</div>
 {% endblock %}
