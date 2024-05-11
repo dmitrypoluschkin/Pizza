@@ -1,5 +1,7 @@
 {% extends 'food/base.html' %}
 
+{% load static %}
+
 {% block title %} Pizza {% endblock %}
 
 
@@ -17,17 +19,17 @@
                     <div class="form-check-inline">
                         <label class="form-check-inline">
                             <input class="form-check-inline" type="radio" name="pizza{{ pizza.id }}" value="{{ pizza.priceM }}" checked>
-                            {{ pizza.priceM }} $
+                            M:{{ pizza.priceM }} $
                         </label>
                     </div>
                     <div class="form-check-inline">
                         <label class="form-check-inline">
                             <input class="form-check-inline" name="pizza{{ pizza.id }}" type="radio" value="{{ pizza.priceL }}">
-                            {{ pizza.priceL }} $
+                            L:{{ pizza.priceL }} $
                         </label>
                     </div>
                     <div>
-                        <button class="btn-info pt-3">Add to cart</button>
+                        <button class="btn-info mt-3" onclick="addPizza('{{ pizza.id }}')">Add to cart</button>
                     </div>
                 </div>
                 {% endfor %}
@@ -35,12 +37,14 @@
 
         </div>
         <div class="col-md-4 orders">
-            <h2 class="text-center">Order list</h2>
-            <ul>
-
-            </ul>
-            <h4 class="text-right">Total: 0$</h4class>
+            <div class="bg-dark p-4 rounded text-light">
+                <h2 class="text-center">Order list</h2>
+                <ul id="pcart"></ul>
+                <h4 class="text-right" id="ptotal">Total: 0$</h4>
+            </div>
         </div>
     </div>
 </div>
+
+<script src="{% static 'food/js/order.js' %}"></script>
 {% endblock %}
